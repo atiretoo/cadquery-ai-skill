@@ -1,13 +1,13 @@
-# CadQuery AI Skill (Untested)
+# CadQuery AI Skill
 
 This repository hosts an AI Skill (`SKILL.md`) for CadQuery. The goal is to provide a highly optimized, dense markdown file that LLMs can use to write perfect CadQuery scripts.
 
-**Status:** Untested.
+**Status:** The skill itself is tested, but the automated maintenance cron loop is currently untested.
 
 ## Goals
 
 1. **Provide Context for LLMs**: Distill the official CadQuery documentation into essential syntax, capabilities, and concepts, specifically optimized for LLM consumption.
-2. **Autonomous Maintenance Setup**: While this repository hosts the finalized `SKILL.md`, the actual maintenance happens via a local automated setup. A local cron job runs within an Antigravity AI agent, which fetches upstream changes from the main CadQuery repository, scans for documentation updates, and autonomously updates and pushes the revised `SKILL.md` here.
+2. **Autonomous Maintenance Setup**: While this repository hosts the finalized `SKILL.md`, the actual maintenance happens via a local automated setup. A local cron job runs within an Antigravity AI agent, which fetches upstream changes from the main CadQuery repository, scans for documentation updates, and autonomously proposes updates to `SKILL.md`. To adhere to our "No blind automation" policy, the agent will push these updates to a new branch and open a Pull Request for human review before merging into `main`.
 3. **Capture Domain Quirks**: Record critical, undocumented, or non-intuitive behaviors (e.g., coordinate system nuances in CadQuery) to help agents avoid common pitfalls.
 
 ## Development & AI Policy: The "Centaur" Approach
