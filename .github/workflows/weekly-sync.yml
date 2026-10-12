@@ -2,7 +2,7 @@ name: Autonomous CadQuery Skill Maintenance
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
+    - cron: '0 1 * * 0' # Every Sunday at 01:00 UTC (1 hr after fork sync)
   workflow_dispatch:      # Allows manual trigger via GitHub Actions UI
 
 permissions:
