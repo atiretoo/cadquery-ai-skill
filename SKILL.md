@@ -187,3 +187,35 @@ Models can be exported to standard formats for 3D printing (STL) or generic CAD 
 cq.exporters.export(result, "my_part.step")
 cq.exporters.export(result, "my_part.stl")
 ```
+
+## 7. CadQuery MCP Server & Verification Best Practices
+
+When using the `cadquery` MCP server (`render`, `inspect`, `export`) to visualize and verify models, adhere to the following rules:
+
+### 7.1 Visual Verification Protocol (`render`)
+The MCP `render` tool executes Python code and returns headless visual renders directly into the agent's multimodal context:
+- **Hide cluttered wireframes:** Always pass `show_hidden: false` to remove internal wireframe clutter.
+- **Multi-view verification:** Always pass `multi_view: true` to generate 4 perspectives simultaneously (**Isometric, Front, Top, Right**) for thorough visual validation.
+- **Output assignment:** Always assign the target geometry to `result` (e.g. `result = cq.Workplane(...)...`) or call `show_object(shape)`.
+- **Recommended dimensions:** `width: 1024`, `height: 768`.
+
+### 7.2 Geometric Inspection (`inspect`)
+Visual renders alone can obscure sub-millimeter alignment errors or tolerance mismatches. Use the `inspect` tool to confirm:
+- Bounding box dimensions (`xmin..xmax`, `ymin..ymax`, `zmin..zmax`) and overall spans (`xlen`, `ylen`, `zlen`).
+- Model symmetry, volume, surface area, and center of mass.
+
+### 7.3 Isolated MCP Environment & Imports
+The MCP server runs in its own isolated Python environment. Whenever executing script snippets that import packages or modules from the current repository, prepend:
+```python
+import sys
+sys.path.insert(0, ".")  # or absolute workspace path
+```
+
+### 7.4 Stdio Protocol Rule (CRITICAL: Never Use `print`)
+> [!CAUTION]
+> **NEVER include `print(...)` statements in CadQuery scripts executed through the MCP server.**
+> The MCP server communicates with Antigravity via standard I/O (`stdio`) using JSON-RPC. Any raw stdout output emitted by user code corrupts the JSON-RPC stream, causing the tool call to fail or time out.
+
+### 7.5 Parametric Design & Unit Testing
+- Ensure all models are fully parametric, with dimensions parameterized at the top of the script or function.
+- Test models with unit tests validating critical dimensions, tolerances, and bounding boxes.

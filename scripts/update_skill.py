@@ -144,15 +144,16 @@ TASK:
 Update `SKILL.md` to reflect any new methods, API changes, syntax updates, or features introduced in the upstream documentation.
 
 CRITICAL INSTRUCTIONS & CONSTRAINTS:
-1. STRICT PRESERVATION: You MUST preserve Section 2 ("Coordinate Spaces & Orientation (CRITICAL)") and all its subsection rules verbatim. Do NOT modify or remove:
+1. STRICT PRESERVATION OF SECTION 2: You MUST preserve Section 2 ("Coordinate Spaces & Orientation (CRITICAL)") and all its subsection rules verbatim. Do NOT modify or remove:
    - The CAD standard: +X = right, +Y = rear, +Z = up in all three spaces (Build, User, Print).
    - Build Space and User Space are identical.
    - The rotation to Print Space is always the LAST operation in a script.
    - The workplane orientation rules: always use cyclic "XY", "YZ", "ZX" (NEVER "XZ").
    - The specific note on "ZX" swapping local sketch axes to local x = +Z, local y = +X, with coordinates written (z, x).
    - The print orientation table and rules.
-2. DENSE AND OPTIMIZED: Maintain dense, concise, and accurate documentation structured specifically for LLMs.
-3. OUTPUT FORMAT:
+2. STRICT PRESERVATION OF SECTION 7: You MUST preserve Section 7 ("CadQuery MCP Server & Verification Best Practices") verbatim. Do NOT modify or remove the MCP verification protocol (show_hidden: false, multi_view: true, sys.path.insert, or the critical stdio rule against print statements).
+3. DENSE AND OPTIMIZED: Maintain dense, concise, and accurate documentation structured specifically for LLMs.
+4. OUTPUT FORMAT:
    Return ONLY the complete updated text of `SKILL.md`.
    Start immediately with the YAML frontmatter (`---`).
    Do NOT enclose the entire output in extra Markdown backtick code blocks (e.g. no leading ```markdown and no trailing ```).
@@ -175,7 +176,8 @@ CRITICAL INSTRUCTIONS & CONSTRAINTS:
         "name:",
         "description:",
         "# CadQuery AI Skill",
-        "## 2. Coordinate Spaces & Orientation"
+        "## 2. Coordinate Spaces & Orientation",
+        "## 7. CadQuery MCP Server"
     ]
     for phrase in required_phrases:
         if phrase not in updated_skill:
