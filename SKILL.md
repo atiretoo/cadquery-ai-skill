@@ -1,6 +1,10 @@
 ---
-name: CadQuery Maintainer
-description: Core syntax, patterns, and coordinate system rules for generating precise CadQuery 3D models.
+name: cadquery
+description: >-
+  REQUIRED whenever writing, generating, modifying, inspecting, or debugging CadQuery Python code,
+  3D CAD models, or using the CadQuery MCP server. Contains mandatory coordinate conventions
+  (Build Space = User Space, +X right, +Y rear, +Z up, ZX workplane rules), topology, selectors,
+  and print orientation rotations.
 ---
 
 # CadQuery AI Skill

@@ -10,6 +10,26 @@ This repository hosts an AI Skill (`SKILL.md`) for CadQuery. The goal is to prov
 2. **Autonomous Maintenance Setup**: While this repository hosts the finalized `SKILL.md`, maintenance is automated via a weekly GitHub Actions workflow independent of local machines. The workflow tracks upstream CadQuery changes, detects modifications under `doc/`, uses Google's Gemini API to synthesize updates while strictly preserving our coordinate conventions, and opens a Pull Request assigned to the maintainer for human-in-the-loop review.
 3. **Capture Domain Quirks**: Record critical, undocumented, or non-intuitive behaviors (e.g., coordinate system nuances in CadQuery) to help agents avoid common pitfalls.
 
+## Installation & Usage
+
+### 1. Global Installation (All Projects)
+Clone this repository into your global Antigravity skills directory:
+```bash
+cd ~/.gemini/config/skills/
+git clone https://github.com/atiretoo/cadquery-ai-skill.git
+```
+
+### 2. Project-Level Installation
+Alternatively, install it into a specific project's workspace:
+```bash
+git clone https://github.com/atiretoo/cadquery-ai-skill.git <project_root>/.agents/skills/cadquery-ai-skill
+```
+
+### 3. Activating & Using the Skill
+- **Automatic:** Antigravity agents automatically discover the skill and load `SKILL.md` whenever generating, modifying, or debugging CadQuery code.
+- **Explicit Mention:** In any Antigravity conversation, type `@cadquery` to force the agent to load the full skill into its context.
+- **Always-On Rule (Recommended):** To ensure agents never miss the coordinate conventions, add a rule to `~/.gemini/config/rules/cadquery.md` pointing to this skill.
+
 ## Development & AI Policy: The "Centaur" Approach
 
 This project is developed using a collaborative human-AI workflow. The code, architecture, and documentation were written and refined with the assistance of advanced AI models. 
