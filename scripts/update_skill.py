@@ -152,8 +152,9 @@ CRITICAL INSTRUCTIONS & CONSTRAINTS:
    - The specific note on "ZX" swapping local sketch axes to local x = +Z, local y = +X, with coordinates written (z, x).
    - The print orientation table and rules.
 2. STRICT PRESERVATION OF SECTION 7: You MUST preserve Section 7 ("CadQuery MCP Server & Verification Best Practices") verbatim. Do NOT modify or remove the MCP verification protocol (show_hidden: false, multi_view: true, sys.path.insert, or the critical stdio rule against print statements).
-3. DENSE AND OPTIMIZED: Maintain dense, concise, and accurate documentation structured specifically for LLMs.
-4. OUTPUT FORMAT:
+3. STRICT PRESERVATION OF SECTION 5.1: You MUST preserve Section 5.1 ("Multi-Piece Woodworking & Assembly Rules") verbatim. Do NOT remove instructions on modeling individual boards as distinct components and adding visual seam chamfers.
+4. DENSE AND OPTIMIZED: Maintain dense, concise, and accurate documentation structured specifically for LLMs.
+5. OUTPUT FORMAT:
    Return ONLY the complete updated text of `SKILL.md`.
    Start immediately with the YAML frontmatter (`---`).
    Do NOT enclose the entire output in extra Markdown backtick code blocks (e.g. no leading ```markdown and no trailing ```).
@@ -177,6 +178,7 @@ CRITICAL INSTRUCTIONS & CONSTRAINTS:
         "description:",
         "# CadQuery AI Skill",
         "## 2. Coordinate Spaces & Orientation",
+        "Multi-Piece Woodworking",
         "## 7. CadQuery MCP Server"
     ]
     for phrase in required_phrases:

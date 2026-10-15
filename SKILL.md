@@ -180,6 +180,18 @@ assy = (
 
 Constraints like `Axis`, `Point`, and `Plane` can automatically position geometry without explicit vector math.
 
+### 5.1 Multi-Piece Woodworking & Assembly Rules
+
+When modeling projects that involve woodworking, cabinetry, or multi-board timber structures:
+
+- **Distinct Components:** Do **NOT** fuse touching wooden boards into a single boolean `union()`. Model each board, stringer, slat, or cleat as an individual solid and assemble them using `cq.Assembly()` or `cq.Compound.makeCompound()`. This preserves individual board geometry, bill-of-materials cut lists, and realistic part separation.
+- **Visual Seam Chamfers:** In visual renders with `show_hidden: false`, touching coplanar faces of identical color will blend seamlessly, making individual boards indistinguishable. Add a small (**0.5 mm to 1.0 mm**) chamfer to the edges of each board before assembling. Where two boards butt together, the chamfers form a clean V-groove shadow line that clearly delineates individual components in renders.
+
+```python
+# Example: Creating a wooden board with a subtle shadow-line chamfer
+board = cq.Workplane("XY").box(300, 90, 19).edges().chamfer(0.8)
+```
+
 ## 6. Exporting
 
 Models can be exported to standard formats for 3D printing (STL) or generic CAD (STEP).
