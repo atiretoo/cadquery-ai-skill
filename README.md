@@ -1,8 +1,11 @@
-# CadQuery AI Skill
+# CadQuery AI Skill (Archived / Superceded)
 
-This repository hosts an AI Skill (`SKILL.md`) for CadQuery. The goal is to provide a highly optimized, dense markdown file that LLMs can use to write perfect CadQuery scripts.
+> [!NOTE]
+> **Active Development Moved:** This skill repository has converged with and transitioned to [`jmwright/cadquery-llm-skill`](https://github.com/jmwright/cadquery-llm-skill) (maintained by CadQuery co-founder Jeremy Wright).
+> Key contributions from this repo—specifically the workplane cyclic order rules (`"ZX"` vs `"XZ"`), $(z, x)$ sketch coordinates, and automated upstream documentation checking—are being contributed upstream there.
+> Personal maker and woodworking rules (seam chamfers, distinct solids) are maintained in [`atiretoo/gemini-config`](https://github.com/atiretoo/gemini-config).
 
-**Status:** The skill itself is tested, but the automated maintenance cron loop is currently untested.
+This repository hosts an earlier prototype AI Skill (`SKILL.md`) for CadQuery.
 
 ## Goals
 

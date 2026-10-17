@@ -1,10 +1,8 @@
 ---
-name: cadquery
+name: cadquery-ai-skill-archive
 description: >-
-  REQUIRED whenever writing, generating, modifying, inspecting, or debugging CadQuery Python code,
-  3D CAD models, or using the CadQuery MCP server. Contains mandatory coordinate conventions
-  (Build Space = User Space, +X right, +Y rear, +Z up, ZX workplane rules), topology, selectors,
-  and print orientation rotations.
+  Archived: Early CadQuery AI skill prototype. For active CadQuery development, use the main
+  'cadquery' skill from jmwright/cadquery-llm-skill.
 ---
 
 # CadQuery AI Skill
