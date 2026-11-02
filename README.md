@@ -1,8 +1,8 @@
 # CadQuery AI Skill (Archived / Superceded)
 
 > [!NOTE]
-> **Active Development Moved:** This skill repository has converged with and transitioned to [`jmwright/cadquery-llm-skill`](https://github.com/jmwright/cadquery-llm-skill) (maintained by CadQuery co-founder Jeremy Wright).
-> Key contributions from this repo—specifically the workplane cyclic order rules (`"ZX"` vs `"XZ"`), $(z, x)$ sketch coordinates, and automated upstream documentation checking—are being contributed upstream there.
+> **Active Development Moved:** This skill repository has converged with and transitioned to our fork [`atiretoo/cadquery-llm-skill`](https://github.com/atiretoo/cadquery-llm-skill) (cloned from [`jmwright/cadquery-llm-skill`](https://github.com/jmwright/cadquery-llm-skill), maintained by CadQuery co-founder Jeremy Wright).
+> Key contributions from this repo—specifically the workplane cyclic order rules (`"ZX"` vs `"XZ"`), $(z, x)$ sketch coordinates, and automated upstream documentation checking—are active there and being contributed upstream.
 > Personal maker and woodworking rules (seam chamfers, distinct solids) are maintained in [`atiretoo/gemini-config`](https://github.com/atiretoo/gemini-config).
 
 This repository hosts an earlier prototype AI Skill (`SKILL.md`) for CadQuery.
@@ -15,17 +15,19 @@ This repository hosts an earlier prototype AI Skill (`SKILL.md`) for CadQuery.
 
 ## Installation & Usage
 
+For active development, please install [`atiretoo/cadquery-llm-skill`](https://github.com/atiretoo/cadquery-llm-skill) instead.
+
 ### 1. Global Installation (All Projects)
-Clone this repository into your global Antigravity skills directory:
+Clone our fork into your global Antigravity skills directory:
 ```bash
 cd ~/.gemini/config/skills/
-git clone https://github.com/atiretoo/cadquery-ai-skill.git
+git clone https://github.com/atiretoo/cadquery-llm-skill.git
 ```
 
 ### 2. Project-Level Installation
 Alternatively, install it into a specific project's workspace:
 ```bash
-git clone https://github.com/atiretoo/cadquery-ai-skill.git <project_root>/.agents/skills/cadquery-ai-skill
+git clone https://github.com/atiretoo/cadquery-llm-skill.git <project_root>/.agents/skills/cadquery-llm-skill
 ```
 
 ### 3. Activating & Using the Skill
